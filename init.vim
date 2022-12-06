@@ -1,67 +1,50 @@
 " => General settings 
-set background=dark
-set clipboard=unnamedplus
-set completeopt=noinsert,menuone,noselect
-set cursorline
-set hidden
-set inccommand=split
-set mouse=a
 set number
-set relativenumber
-set splitbelow splitright
-set title
-set ttimeoutlen=0
-set wildmenu
-
-" Tabs size
-set expandtab
-set shiftwidth=2
-set tabstop=2
+set encoding=UTF-8
 
 " => Plugin listr
 call plug#begin(stdpath('config').'/plugged')
 " Theme
   Plug 'dracula/vim', {'as': 'dracula'}         " Dark theme
+  Plug 'nvim-lualine/lualine.nvim'
 
 " File browser
-  Plug 'preservim/nerdTree'                     " File browser  
-  Plug 'Xuyuanp/nerdtree-git-plugin'            " Git status
-  Plug 'ryanoasis/vim-devicons'                 " Icon
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'unkiwii/vim-nerdtree-sync'              " Sync current file 
+  Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-web-devicons'			" File icons
 
 " File search
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }            " Fuzzy finder 
-  Plug 'junegunn/fzf.vim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } 
+  Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Status bar
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
 
 " Terminal
-  Plug 'voldikss/vim-floaterm'                  " Float terminal
+  Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " Code intellisense
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}                     " Language server protocol (LSP) 
-  Plug 'pappasam/coc-jedi',                     " Jedi language server 
-  Plug 'jiangmiao/auto-pairs'                   " Parenthesis auto 
-  Plug 'mattn/emmet-vim' 
-  Plug 'preservim/nerdcommenter'                " Comment code 
-  Plug 'liuchengxu/vista.vim'                   " Function tag bar 
-  Plug 'alvan/vim-closetag'                     " Auto close HTML/XML tag 
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'MunifTanjim/prettier.nvim'
+  Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'rafamadriz/friendly-snippets'
+  Plug 'windwp/nvim-ts-autotag'
+  Plug 'numToStr/Comment.nvim'
 
 " Code syntax highlight
-  Plug 'yuezk/vim-js'                           " Javascript
-  Plug 'MaxMEllon/vim-jsx-pretty'               " JSX/React
-  
-" Debugging
-  Plug 'puremourning/vimspector'                " Vimspector
+  Plug 'lukas-reineke/indent-blankline.nvim'    " This plugin adds indentation guides to all lines (including empty lines)
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'simrat39/symbols-outline.nvim'
 
-" Source code version control 
-  Plug 'tpope/vim-fugitive'                     " Git infomation 
-  Plug 'tpope/vim-rhubarb' 
-  Plug 'airblade/vim-gitgutter'                 " Git show changes 
-  Plug 'samoshkin/vim-mergetool'                " Git merge
+" Debugging
+
+" Git
+  Plug 'sindrets/diffview.nvim'
+
+" Tooling
+  Plug 'williamboman/mason.nvim'
+
 call plug#end()
 
 
@@ -72,7 +55,9 @@ call plug#end()
 colorscheme dracula
 
 " Other setting
-for setting_file in split(glob(stdpath('config').'/settings/*.vim'), '\n')
+for setting_file in split(glob(stdpath('config').'/settings/used/*'), '\n')
   execute 'source' setting_file
 endfor
+
+"execute 'source ~\AppData\Local\nvim\settings\keysMapping.vim'
 
