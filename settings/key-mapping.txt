@@ -1,4 +1,0 @@
-Fine files: <leader> ff
-Fine help: <leader> fh
-Toggle file browser: f5
-Prettier: <leader> f
