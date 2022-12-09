@@ -1,0 +1,13 @@
+font:
+  normal:
+    family: "Hack Nerd Font"
+    styleL: Regular
+  bold:
+    family: "Hack Nerd Font"
+    styleL: Bold
+  italic:
+    family: "Hack Nerd Font"
+    styleL: Italic
+  bold_italic:
+    family: "Hack Nerd Font"
+    styleL: Bold Italic

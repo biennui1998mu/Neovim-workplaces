@@ -1,4 +1,4 @@
-" => General settings 
+	" => General settings 
 set number
 set encoding=UTF-8
 
@@ -21,26 +21,27 @@ call plug#begin(stdpath('config').'/plugged')
 
 " Terminal
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+  Plug 'kdheepak/lazygit.nvim'"
 
 " Code intellisense
   Plug 'neovim/nvim-lspconfig'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'MunifTanjim/prettier.nvim'
   Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
-  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
   Plug 'rafamadriz/friendly-snippets'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'numToStr/Comment.nvim'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Code syntax highlight
   Plug 'lukas-reineke/indent-blankline.nvim'    " This plugin adds indentation guides to all lines (including empty lines)
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'simrat39/symbols-outline.nvim'
 
 " Debugging
 
 " Git
   Plug 'sindrets/diffview.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
 
 " Tooling
   Plug 'williamboman/mason.nvim'
@@ -59,5 +60,8 @@ for setting_file in split(glob(stdpath('config').'/settings/used/*'), '\n')
   execute 'source' setting_file
 endfor
 
-"execute 'source ~\AppData\Local\nvim\settings\keysMapping.vim'
+if exists(':GuiFont')
+	GuiFont! Hack Nerd Font:h10
+endif
+  Plug 'kdheepak/lazygit.nvim'"
 
