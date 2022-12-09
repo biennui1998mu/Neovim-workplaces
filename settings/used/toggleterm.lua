@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	size = 20,
+	size = 16,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -47,9 +47,9 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
-local cmd = Terminal:new({ cmd = "cmd", hidden = true })
+local ps = Terminal:new({ cmd = "powershell", hidden = true })
 
-function _CMD_TOGGLE()
-	cmd:toggle()
+function _PS_TOGGLE()
+	ps:toggle()
 end
 
