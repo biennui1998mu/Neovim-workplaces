@@ -7,3 +7,4 @@ nnoremap <silent> <C-g> :Telescope git_branches <cr>
 nnoremap <silent> <F5> :NvimTreeToggle <cr>
 nnoremap <silent> <A-f> :lua vim.lsp.buf.format() <cr>
 nnoremap <silent> <F9> :lua _LAZYGIT_TOGGLE() <cr>
+nnoremap <silent> <F10> :lua _CMD_TOGGLE() <cr>
