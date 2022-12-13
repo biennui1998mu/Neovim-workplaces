@@ -15,7 +15,7 @@
 1. Install Scoop follow: `https://scoop.sh/`
 2. Open CMD and Install **ripgep** to cover live_grep (Telescope):
    > scoop install ripgrep
-3. *Install C compiler to cover treesitter
+3. Install C compiler to cover treesitter
    > http://www.codeblocks.org/downloads/binaries/
 4. Install gcc
    > scoop install gcc
